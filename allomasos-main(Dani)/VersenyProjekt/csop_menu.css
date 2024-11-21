@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(43, 43, 43);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #04AA6D;
+    text-align: center;
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+p {
+    color: #04AA6D;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.paper {
+    background-color: white;
+    border-radius: 30px;
+    padding: 5rem 0px 5rem 0px;
+    margin: 10rem 5rem 5rem 35rem;
+    max-width: 800px;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.menu
+{
+    margin: -4rem 0px 6rem -30rem;
+}
