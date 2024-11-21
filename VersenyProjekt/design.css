@@ -13,5 +13,40 @@ h1 {
 
 p {
     text-align: center;
+
+}
+
+.box {
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #57bca6;
+}
+
+.menu {
+    margin-left: 200px;
+}
+
+
+.menu a:hover {
+    margin-left: 20px;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    background-color: #089d76;
+    color: white;
+}
+
+.menu a:after {
     
 }
+
+.menu a:hover {
+    color: black;
+    transition: 1;
+}
+
