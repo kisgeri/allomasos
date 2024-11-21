@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
     <style>
         body {
@@ -37,6 +37,8 @@
             stroke-dasharray: 1759.29;  /* Circumference of the circle, kör kerülete */
             stroke-dashoffset: 1759.29;
             transition: 1s linear all;
+            transform: rotate(-90deg);  /* Elforgatás, hogy a kör fentről induljon */
+            transform-origin: 50% 50%; /* A középpont körül történik az elforgatás */
         }
 
         .timer-text {
@@ -167,6 +169,23 @@
                 startTimer(count, display);
             });
         };
+        /*
+                // A zoomolás letiltása az egér görgetése és érintéses eseményeknél
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });*/
     </script>
 </body>
 </html>
