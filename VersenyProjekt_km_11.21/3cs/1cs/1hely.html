@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <button onclick="history.back()">Vissza</button>
+
+    <h1>Legrand terem - M011</h1>
+
+    <div class="timer-container">
+        <!-- Timer Text -->
+        <div id="time" class="timer-text">00:00</div>
+
+        <!-- SVG Circle for the progress bar -->
+        <svg width="600" height="600">
+            <circle class="circle-bg" cx="300" cy="300" r="280"></circle>
+            <circle class="circle-progress" cx="300" cy="300" r="280"></circle>
+        </svg>
+    </div>
+
+    <div class="timer-control">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <a href="2hely.html">Következő Helyszín</a>
+
+    <script>
+        function startTimer(duration, display) {
+            var start = Date.now(),
+                diff,
+                minutes,
+                seconds;
+            var circleProgress = document.querySelector('.circle-progress');
+            var totalDuration = duration; // total countdown time in seconds
+
+            function timer() {
+                // get the number of seconds that have elapsed since startTimer() was called
+                diff = duration - (((Date.now() - start) / 1000) | 0);
+
+                // Stop the timer when the countdown reaches zero
+                if (diff <= 0) {
+                    clearInterval(intervalId);
+                    diff = 0;
+                    circleProgress.style.strokeDashoffset = 0; // üres kör
+                    setTimeout(function() {alert('Lejárt az idő !!!');},1000);
+                }
+
+                if (diff <= 15) {
+                    circleProgress.style.stroke = "#ff0000"; // piros kör
+                }
+
+                if (diff <= 30 && diff > 15) {
+                    circleProgress.style.stroke = "#ff9900"; // narancs kör
+                }
+
+                if (diff >= 30 ) {
+                    circleProgress.style.stroke = "#4caf50"; // zöld kör
+                }
+
+                // Calculate minutes and seconds
+                minutes = (diff / 60) | 0;
+                seconds = (diff % 60) | 0;
+
+                // Format as two digits
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                // Display the time
+                display.textContent = minutes + ":" + seconds;
+
+                // Update the progress bar (stroke-dashoffset determines how much of the circle is filled)
+                var progress = (diff / totalDuration) * 1759.29; // Calculate the progress
+                circleProgress.style.strokeDashoffset = 1759.29 - progress;
+            }
+
+            // Start the timer immediately
+            timer();
+            
+            // Set interval to update every second
+            var intervalId = setInterval(timer, 1000);
+
+            // Stop the timer when the 'Stop' button is clicked
+            document.getElementById('stop').addEventListener('click', function () {
+                clearInterval(intervalId);
+            });
+        }
+
+        window.onload = function () {
+            var count = 60,  // seconds countdown for example
+                minutes = (count / 60) | 0,
+                seconds = (count % 60) | 0;
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            var display = document.querySelector('#time');
+            display.textContent = minutes + ":" + seconds;
+
+            // Start the timer when the 'Start' button is clicked
+            document.getElementById('start').addEventListener('click', function () {
+                startTimer(count, display);
+            });
+        };
+    </script>
+</body>
+</html>
