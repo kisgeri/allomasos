@@ -16,16 +16,35 @@ p {
 
 }
 
-.box {
-    margin: 0 auto;
-    padding: 20px;
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: #57bca6;
+.main-box {
+    margin-top: 100px;
 }
 
-.menu {
-    margin-left: 200px;
+.box {
+    text-align: center;
+    padding: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+
+}
+
+a {
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+}
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 40px 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 
@@ -41,12 +60,14 @@ p {
     color: white;
 }
 
-.menu a:after {
-    
-}
+
 
 .menu a:hover {
     color: black;
     transition: 1;
 }
 
+img {
+    width: 400px;
+    height: 80px;
+}
