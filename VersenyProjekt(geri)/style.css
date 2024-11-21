@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+.timer-container {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 40;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: #4caf50;
+    stroke-width: 40;
+    stroke-dasharray: 1759.29;  /* Circumference of the circle, kör kerülete */
+    stroke-dashoffset: 1759.29;
+    transition: 1s linear all;
+    transform: rotate(-90deg);  /* Elforgatás, hogy a kör fentről induljon */
+    transform-origin: 50% 50%; /* A középpont körül történik az elforgatás */
+}
+
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 0px;
+    padding: 30px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+.timer-control{
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.button-small {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.nav{
+    text-align: right;
+    float: right;
+}
