@@ -2,13 +2,14 @@
 <html lang="hu">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
         <title>Document</title>
         <link rel="stylesheet" href="../../style.css">
     </head>
 <body>
     <button onclick="history.back()">Vissza</button>
-
+    <img src="../../kepek/WMLogo.png" class="kep">
+    <h2 class="csoport">5 Csoport</h2>
     <h1>Legrand terem</h1>
 
     <div class="timer-container">
@@ -29,7 +30,7 @@
         <button id="stop">Stop</button>
     </div>
 
-    <a href="2hely.html">Következő Helyszín</a>
+    <a href="2hely.html">Következő helyszín</a>
 
     <script>
         function startTimer(duration, display) {
@@ -53,16 +54,16 @@
                     
                 }
 
-                if (diff <= 15) {
-                    circleProgress.style.stroke = "#ff0000"; //  piros kör
+                if (diff <= 30) {
+                    circleProgress.style.stroke = "#ff0000"; // piros kör
                 }
 
-                if (diff <= 30 && diff > 15) {
-                    circleProgress.style.stroke = "#ff9900"; //  narancs kör
+                if (diff <= 120 && diff > 30) {
+                    circleProgress.style.stroke = "#ff9900"; // narancs kör
                 }
 
-                if (diff >= 30 ) {
-                    circleProgress.style.stroke = "#4caf50"; //  narancs kör
+                if (diff >= 120 ) {
+                    circleProgress.style.stroke = "#4caf50"; // zöld kör
                 }
 
                 // Calculate minutes and seconds
@@ -95,7 +96,7 @@
         }
 
         window.onload = function () {
-            var count = 60,  //  seconds countdown for example
+            var count = 60 * 12,  //  seconds countdown for example
                 minutes = (count / 60) | 0,
                 seconds = (count % 60) | 0;
 
